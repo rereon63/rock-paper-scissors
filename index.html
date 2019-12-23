@@ -39,6 +39,79 @@
             
 
             /**
+             * Summary: Determines the winner of a round of Rock, Paper, Scissors.
+             * 
+             * Dexcription: Takes a computer generated choice and a user input 
+             * choice of either rock, paper, or scissors and determines whether
+             * the game was a tie, the user won, or the computer won and then
+             * outputs the result as a message string. 
+             * 
+             * @since   1.1.1
+             * 
+             * @param   string  playerSelection     The player's choice (rock, 
+             *                                      paper, scissors).
+             * @param   string  computerSelection   The computer's choice 
+             *                                      (rock, paper, scissors).
+             * 
+             * @return  string  outMessage          The output message of the 
+             *                                      game results.
+             */
+            function playRound(playerSelection, computerSelection) {
+                let outMessage = "";
+                // User chooses rock.
+                if (playerSelection.toLowerCase() === "rock") {
+                    if (computerSelection.toLowerCase() === "rock") {
+                        outMessage = "You Tie! You both chose Rock.";
+                    }
+                    else if (computerSelection.toLowerCase() === "paper") {
+                        outMessage = "You Lose! Paper beats Rock.";
+                    }
+                    else if (computerSelection.toLowerCase() === "scissors") {
+                        outMessage = "You Win! Rock beats Scissors.";
+                    }
+                    else {
+                        outMessage = "Invalid game. There was an error.";
+                    }
+                }
+                // User chooses paper.
+                else if (playerSelection.toLowerCase() === "paper") {
+                    if (computerSelection.toLowerCase() === "rock") {
+                        outMessage = "You Win! Paper beats Rock.";
+                    }
+                    else if (computerSelection.toLowerCase() === "paper") {
+                        outMessage = "You Tie! You both chose Paper.";
+                    }
+                    else if (computerSelection.toLowerCase() === "scissors") {
+                        outMessage = "You Lose! Scissors beats Paper.";
+                    }
+                    else {
+                        outMessage = "Invalid game. There was an error.";
+                    }
+                }
+                // User chooses scissors.
+                else if (playerSelection.toLowerCase() === "scissors") {
+                    if (computerSelection.toLowerCase() === "rock") {
+                        outMessage = "You Lose! Rock beats Scissors.";
+                    }
+                    else if (computerSelection.toLowerCase() === "paper") {
+                        outMessage = "You Win! Scissors beats Paper.";
+                    }
+                    else if (computerSelection.toLowerCase() === "scissors") {
+                        outMessage = "You Tie!. You both chose Scissors.";
+                    }
+                    else {
+                        outMessage = "Invalid game. There was an error.";
+                    }
+                }
+                else {
+                    outMessage = "Invalid game. There was an error."
+                }
+
+                return outMessage;
+            }
+
+
+            /**
              * Summary: Outputs the given string to the html page in a p tag.
              * 
              * Description: Takes a string value, generates a paragraph tag,
@@ -53,6 +126,10 @@
                 document.body.appendChild(para);
                 para.textContent = 'Value: ' + value;
             }
+
+            const playerSelection = 'rock';
+            const computerSelection = computerSelection();
+            console.log(playerSelection(playerSelection, computerSelection));
         </script>
     </body>
 </html>
