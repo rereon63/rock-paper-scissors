@@ -51,65 +51,66 @@
              * @param   string  computerSelection   The computer's choice 
              *                                      (rock, paper, scissors).
              * 
-             * @return  string  outMessage          The output message of the 
-             *                                      game results.
+             * @return  string   result             The output containing the 
+             *                                      game result.
              */
             function playRound(playerSelection, computerSelection) {
-                let outMessage = "";
+                let result = "";
                 // User chooses rock.
                 if (playerSelection.toLowerCase() === "rock") {
                     if (computerSelection.toLowerCase() === "rock") {
-                        outMessage = "You Tie! You both chose Rock.";
+                        result = "Tie";
                     }
                     else if (computerSelection.toLowerCase() === "paper") {
-                        outMessage = "You Lose! Paper beats Rock.";
+                        result = "Loss";
                     }
                     else if (computerSelection.toLowerCase() === "scissors") {
-                        outMessage = "You Win! Rock beats Scissors.";
+                        result = "Win";
                     }
                     else {
-                        outMessage = "Invalid game. There was an error.";
+                        result = "Invalid";
                     }
                 }
                 // User chooses paper.
                 else if (playerSelection.toLowerCase() === "paper") {
                     if (computerSelection.toLowerCase() === "rock") {
-                        outMessage = "You Win! Paper beats Rock.";
+                        result = "Win";
                     }
                     else if (computerSelection.toLowerCase() === "paper") {
-                        outMessage = "You Tie! You both chose Paper.";
+                        result = "Tie";
                     }
                     else if (computerSelection.toLowerCase() === "scissors") {
-                        outMessage = "You Lose! Scissors beats Paper.";
+                        result = "Loss";
                     }
                     else {
-                        outMessage = "Invalid game. There was an error.";
+                        result = "Invalid";
                     }
                 }
                 // User chooses scissors.
                 else if (playerSelection.toLowerCase() === "scissors") {
                     if (computerSelection.toLowerCase() === "rock") {
-                        outMessage = "You Lose! Rock beats Scissors.";
+                        result = "Loss";
                     }
                     else if (computerSelection.toLowerCase() === "paper") {
-                        outMessage = "You Win! Scissors beats Paper.";
+                        result = "Win";
                     }
                     else if (computerSelection.toLowerCase() === "scissors") {
-                        outMessage = "You Tie!. You both chose Scissors.";
+                        result = "Tie";
                     }
                     else {
-                        outMessage = "Invalid game. There was an error.";
+                        result = "Invalid";
                     }
                 }
                 else {
-                    outMessage = "Invalid game. There was an error."
+                    result = "Invalid"
                 }
-
-                return outMessage;
+                return result;
             }
 
             /**
-             * Summary Plays a 5-round game of Rock, Paper, Scissors
+             * Summary Plays a 5-round game of Rock, Paper, Scissors.
+             * 
+             * @since   1.1.1
              */
             function game() {
                 for (let i = 0; i < 5; i++) {
