@@ -153,13 +153,18 @@
 
 
             /**
-             * Summary: Prints score message.
+             * Summary: Prints score message to log.
              * 
              * @since 1.1.2
              * 
-             * 
+             * @param   array   score           An array of 3 values 
+             *                                  (Wins, Losses, Ties).
              */
-
+            function printScore(score) {
+                console.log("Total Score: " + score[0] + " wins, " 
+                                            + score[1] + " losses, " 
+                                            + score[2] + " ties.")
+            }
 
             /**
              * Summary: Plays a 5-round game of Rock, Paper, Scissors.
@@ -181,9 +186,7 @@
                     track(score, game);
                 }
 
-                console.log("Total Score: " + score[0] + " wins, " 
-                                            + score[1] + " losses, " 
-                                            + score[2] + " ties.")
+                printScore();
             }
 
 
