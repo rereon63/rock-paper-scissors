@@ -15,7 +15,7 @@
              * 
              * @since   1.1.1
              * 
-             * @return  {string}    The choice or rock, paper, scissors, (or invalid). 
+             * @return  string  choice    The choice or rock, paper, scissors. 
              */
             function computerPlay() {
                 let choice = "";
@@ -123,6 +123,8 @@
              *                                  (Wins, Losses, Ties).
              * @param   string  roundResult     The string value representing
              *                                  the result of a round.
+             * 
+             * @return  array   score           The updated score values.
              */
             function track(score, roundResult) {
                 // Check result and add point where needed
@@ -151,7 +153,20 @@
 
 
             /**
+             * Summary: Prints score message.
+             * 
+             * @since 1.1.2
+             * 
+             * 
+             */
+
+
+            /**
              * Summary: Plays a 5-round game of Rock, Paper, Scissors.
+             * 
+             * Description: Functions as the "main" function.  Runs five rounds
+             * of the game and tracks the score.  At the end, the score is 
+             * logged in the console.
              * 
              * @since   1.1.1
              */
