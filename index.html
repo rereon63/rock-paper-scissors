@@ -163,7 +163,7 @@
             function printScore(score) {
                 console.log("Total Score: " + score[0] + " wins, " 
                                             + score[1] + " losses, " 
-                                            + score[2] + " ties.")
+                                            + score[2] + " ties.");
             }
 
             /**
@@ -174,12 +174,15 @@
              * logged in the console.
              * 
              * @since   1.1.1
+             * 
+             * @param   integer     numRounds   The number of rounds to play.
              */
-            function game() {
+            function game(numRounds=5) {
                 // Initialize game related variables
                 let game = "";
                 let score = [0, 0, 0]   // Wins, Ties, Losses
-                for (let i = 0; i < 5; i++) {
+
+                for (let i = 0; i < numRounds; i++) {
                     userChoice = prompt("Rock, Paper, or Scissors?");
                     compChoice = computerPlay();
                     game = playRound(userChoice, compChoice);
