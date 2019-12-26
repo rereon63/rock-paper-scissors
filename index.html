@@ -59,13 +59,13 @@
                 // User chooses rock.
                 if (playerSelection.toLowerCase() === "rock") {
                     if (computerSelection.toLowerCase() === "rock") {
-                        result = "Tie";
+                        result = "Tied";
                     }
                     else if (computerSelection.toLowerCase() === "paper") {
-                        result = "Loss";
+                        result = "Lost";
                     }
                     else if (computerSelection.toLowerCase() === "scissors") {
-                        result = "Win";
+                        result = "Won";
                     }
                     else {
                         result = "Invalid";
@@ -74,13 +74,13 @@
                 // User chooses paper.
                 else if (playerSelection.toLowerCase() === "paper") {
                     if (computerSelection.toLowerCase() === "rock") {
-                        result = "Win";
+                        result = "Won";
                     }
                     else if (computerSelection.toLowerCase() === "paper") {
-                        result = "Tie";
+                        result = "Tied";
                     }
                     else if (computerSelection.toLowerCase() === "scissors") {
-                        result = "Loss";
+                        result = "Lost";
                     }
                     else {
                         result = "Invalid";
@@ -89,13 +89,13 @@
                 // User chooses scissors.
                 else if (playerSelection.toLowerCase() === "scissors") {
                     if (computerSelection.toLowerCase() === "rock") {
-                        result = "Loss";
+                        result = "Lost";
                     }
                     else if (computerSelection.toLowerCase() === "paper") {
-                        result = "Win";
+                        result = "Won";
                     }
                     else if (computerSelection.toLowerCase() === "scissors") {
-                        result = "Tie";
+                        result = "Tied";
                     }
                     else {
                         result = "Invalid";
@@ -104,18 +104,66 @@
                 else {
                     result = "Invalid"
                 }
+
+                sayResults(result, playerSelection, computerSelection);
                 return result;
             }
 
+
             /**
-             * Summary Plays a 5-round game of Rock, Paper, Scissors.
+             * Summary: Tracks the score of an ongoing game of Rock, Paper, Scissors.
+             * 
+             * Description: Takes a given existing score array and the results
+             * of the most recent round.  Depending on the results, add a point
+             * to a section of the array.
+             * 
+             * @since 1.1.2
+             * 
+             * @param   array   score           An array of 3 values 
+             *                                  (Wins, Losses, Ties).
+             * @param   string  roundResult     The string value representing
+             *                                  the result of a round.
+             */
+            function track(score, roundResult) {
+                // Check result and add point where needed
+                switch(roundResult) {
+                    case "Won":
+                        score[0]++;
+                        break;
+                    case "Lost":
+                        score[1]++;
+                        break;
+                    case "Tied":
+                        score[2]++;
+                        break;
+                }
+                // Return the updated score.
+                return score;
+            }
+
+
+            function sayResults(roundResult, playerSelection, computerSelection) {
+                
+                
+                console.log("You " + roundResult + "! The computer chose " + computerSelection + ".");
+            }
+
+
+            /**
+             * Summary: Plays a 5-round game of Rock, Paper, Scissors.
              * 
              * @since   1.1.1
              */
             function game() {
+                // Initialize game related variables
+                let game = "";
+                let score = [0, 0, 0]   // Wins, Ties, Losses
                 for (let i = 0; i < 5; i++) {
-                    userChoice = prompt("Rock, Paper, or Scissors?")
-                    playRound(userChoice, computerPlay())
+                    userChoice = prompt("Rock, Paper, or Scissors?");
+                    compChoice = computerPlay();
+                    game = playRound(userChoice, compChoice);
+                    track(score, game);
+                    
                 }
             }
 
