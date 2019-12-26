@@ -193,27 +193,7 @@
                 // Output final score.
                 printScore();
             }
-
-
-            /**
-             * Summary: Outputs the given string to the html page in a p tag.
-             * 
-             * Description: Takes a string value, generates a paragraph tag,
-             * then outputs the string to that tag in the HTML.
-             * 
-             * @param   string  value       
-             * 
-             * @since   1.1.1
-             */
-            function output(value) {
-                const para = document.createElement('p');
-                document.body.appendChild(para);
-                para.textContent = 'Value: ' + value;
-            }
-
-            const playerSelection = 'rock';
-            const computerSelection = computerPlay();
-            console.log(playRound(playerSelection, computerSelection));
+            
         </script>
     </body>
 </html>
