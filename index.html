@@ -145,7 +145,8 @@
             function sayResults(roundResult, playerSelection, computerSelection) {
                 
                 
-                console.log("You " + roundResult + "! The computer chose " + computerSelection + ".");
+                console.log("You " + roundResult + "! The computer chose " 
+                                            + computerSelection + ".");
             }
 
 
@@ -163,8 +164,11 @@
                     compChoice = computerPlay();
                     game = playRound(userChoice, compChoice);
                     track(score, game);
-                    
                 }
+
+                console.log("Total Score: " + score[0] + " wins, " 
+                                            + score[1] + " losses, " 
+                                            + score[2] + " ties.")
             }
 
 
